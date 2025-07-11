@@ -1,5 +1,9 @@
 # Personal Homepage - Agent Guide
 
+## Project Info
+
+**Name**: home
+
 ## Architecture
 
 **Framework**: SvelteKit with TypeScript
