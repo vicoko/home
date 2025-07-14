@@ -1,4 +1,8 @@
 <script lang="ts">
+  import SkillBar from '$lib/components/SkillBar.svelte';
+  import ProjectCard from '$lib/components/ProjectCard.svelte';
+  import ContactLink from '$lib/components/ContactLink.svelte';
+
   interface Skill {
     name: string;
     level: number;
@@ -34,6 +38,13 @@
       link: 'https://github.com/yourusername/project2'
     }
   ];
+
+  const contacts = [
+    { href: 'mailto:your.email@example.com', icon: '📧', label: 'your.email@example.com' },
+    { href: 'https://github.com/yourusername', icon: '💻', label: 'GitHub' },
+    { href: 'https://linkedin.com/in/yourusername', icon: '💼', label: 'LinkedIn' },
+    { href: 'https://twitter.com/yourusername', icon: '🐦', label: 'Twitter' }
+  ];
 </script>
 
 <div class="max-w-4xl mx-auto px-4 py-12 sm:px-6 lg:px-8">
@@ -63,15 +74,7 @@
     <div class="bg-white rounded-lg shadow-sm p-6">
       <div class="space-y-4">
         {#each skills as skill}
-          <div>
-            <div class="flex justify-between mb-1">
-              <span class="text-sm font-medium text-gray-700">{skill.name}</span>
-              <span class="text-sm text-gray-500">{skill.level}%</span>
-            </div>
-            <div class="w-full bg-gray-200 rounded-full h-2">
-              <div class="bg-blue-600 h-2 rounded-full" style="width: {skill.level}%"></div>
-            </div>
-          </div>
+          <SkillBar name={skill.name} level={skill.level} />
         {/each}
       </div>
     </div>
@@ -81,23 +84,7 @@
     <h2 class="text-2xl font-bold text-gray-900 mb-6">Projects</h2>
     <div class="grid gap-6 md:grid-cols-2">
       {#each projects as project}
-        <div class="bg-white rounded-lg shadow-sm p-6 hover:shadow-md transition-shadow">
-          <h3 class="text-xl font-semibold text-gray-900 mb-2">{project.name}</h3>
-          <p class="text-gray-600 mb-4">{project.description}</p>
-          <div class="flex flex-wrap gap-2 mb-4">
-            {#each project.tech as tech}
-              <span class="px-3 py-1 bg-gray-100 text-gray-700 text-sm rounded-full">
-                {tech}
-              </span>
-            {/each}
-          </div>
-          {#if project.link}
-            <a href={project.link} target="_blank" rel="noopener noreferrer" 
-               class="text-blue-600 hover:text-blue-800 text-sm font-medium">
-              View Project →
-            </a>
-          {/if}
-        </div>
+        <ProjectCard {...project} />
       {/each}
     </div>
   </div>
@@ -106,29 +93,9 @@
     <h2 class="text-2xl font-bold text-gray-900 mb-6">Contact</h2>
     <div class="bg-white rounded-lg shadow-sm p-6">
       <div class="grid gap-4 md:grid-cols-2">
-        <a href="mailto:your.email@example.com" 
-           class="flex items-center space-x-3 text-gray-600 hover:text-gray-900">
-          <span class="text-2xl">📧</span>
-          <span>your.email@example.com</span>
-        </a>
-        <a href="https://github.com/yourusername" 
-           target="_blank" rel="noopener noreferrer"
-           class="flex items-center space-x-3 text-gray-600 hover:text-gray-900">
-          <span class="text-2xl">💻</span>
-          <span>GitHub</span>
-        </a>
-        <a href="https://linkedin.com/in/yourusername" 
-           target="_blank" rel="noopener noreferrer"
-           class="flex items-center space-x-3 text-gray-600 hover:text-gray-900">
-          <span class="text-2xl">💼</span>
-          <span>LinkedIn</span>
-        </a>
-        <a href="https://twitter.com/yourusername" 
-           target="_blank" rel="noopener noreferrer"
-           class="flex items-center space-x-3 text-gray-600 hover:text-gray-900">
-          <span class="text-2xl">🐦</span>
-          <span>Twitter</span>
-        </a>
+        {#each contacts as contact}
+          <ContactLink {...contact} />
+        {/each}
       </div>
     </div>
   </div>
