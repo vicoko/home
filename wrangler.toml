@@ -1,12 +1,8 @@
 name = "home"
-main = ".svelte-kit/cloudflare/_worker.js"
 compatibility_date = "2024-01-01"
-workers_dev = true
 
-[site]
-bucket = ".svelte-kit/cloudflare"
+# This is a Pages project with Functions
+pages_build_output_dir = ".svelte-kit/cloudflare"
 
-[build]
-command = "npm run build"
-
+# Enable Node.js compatibility for Pages Functions
 compatibility_flags = ["nodejs_compat"]
