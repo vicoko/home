@@ -1,13 +1,10 @@
-# This file is optional for Cloudflare Pages
-# It's mainly used for additional configuration
+# Cloudflare Pages configuration
+# This file is used when deploying with wrangler CLI
+# The GitHub Action uses cloudflare/pages-action which handles this differently
 
 name = "home"
 compatibility_date = "2024-01-01"
 
-[build]
-command = "npm run build"
-publish = "build"
-
-# Pages Functions (optional)
-# [[pages.functions]]
-# directory = "src/routes/api"
+# For direct wrangler CLI deployment
+[assets]
+directory = "./build"
