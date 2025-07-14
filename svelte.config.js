@@ -11,8 +11,14 @@ const config = {
 			routes: {
 				include: ['/*'],
 				exclude: ['<all>']
+			},
+			platformProxy: {
+				configPath: './wrangler.toml'
 			}
-		})
+		}),
+		serviceWorker: {
+			register: false
+		}
 	}
 };
 
