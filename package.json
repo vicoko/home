@@ -20,7 +20,7 @@
     "postcss": "^8.4.49",
     "svelte": "^5.14.2",
     "svelte-check": "^4.0.8",
-    "tailwindcss": "^3.4.17",
+    "tailwindcss": "^4.1.11",
     "typescript": "^5.7.2",
     "vite": "^6.0.5",
     "storybook": "^9.0.16",
