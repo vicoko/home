@@ -1,0 +1,28 @@
+{
+  "$schema": "https://docs.renovatebot.com/renovate-schema.json",
+  "extends": [
+    "config:recommended"
+  ],
+  "rangeStrategy": "bump",
+  "labels": ["dependencies"],
+  "packageRules": [
+    {
+      "matchPackagePatterns": ["*"],
+      "matchUpdateTypes": ["minor", "patch"],
+      "groupName": "all non-major dependencies",
+      "groupSlug": "all-minor-patch"
+    },
+    {
+      "matchPackagePatterns": ["@sveltejs/*", "svelte"],
+      "groupName": "svelte packages"
+    },
+    {
+      "matchPackagePatterns": ["@storybook/*", "storybook"],
+      "groupName": "storybook packages"
+    }
+  ],
+  "schedule": ["after 9am on monday"],
+  "timezone": "UTC",
+  "prHourlyLimit": 2,
+  "prConcurrentLimit": 10
+}
