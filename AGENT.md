@@ -109,7 +109,7 @@ npm run build        # Creates build/ directory
 ```
 
 ### Deployment Options
-- **Cloudflare Pages**: Configured with wrangler.toml
+- **Cloudflare Workers**: Configured with wrangler.toml
 - **Vercel**: Connect GitHub repo, auto-deploys on push
 - **Netlify**: Connect GitHub repo, auto-deploys on push
 - **Static hosting**: Upload build/ directory contents
