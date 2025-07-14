@@ -1,4 +1,5 @@
 /// <reference types="@sveltejs/kit" />
+/// <reference types="@cloudflare/workers-types" />
 
 declare global {
 	namespace App {
@@ -6,7 +7,15 @@ declare global {
 		// interface Locals {}
 		// interface PageData {}
 		// interface PageState {}
-		// interface Platform {}
+		interface Platform {
+			env?: {
+				ASSETS: Fetcher;
+			};
+			context: {
+				waitUntil(promise: Promise<any>): void;
+			};
+			caches: CacheStorage & { default: Cache };
+		}
 	}
 }
 
