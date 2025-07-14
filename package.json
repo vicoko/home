@@ -13,7 +13,7 @@
     "deploy": "npm run build && wrangler pages deploy build"
   },
   "devDependencies": {
-    "@sveltejs/adapter-cloudflare": "^4.7.4",
+    "@sveltejs/adapter-cloudflare": "^7.0.5",
     "@sveltejs/kit": "^2.8.5",
     "@sveltejs/vite-plugin-svelte": "^5.0.0",
     "autoprefixer": "^10.4.20",
