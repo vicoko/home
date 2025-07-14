@@ -7,7 +7,9 @@
     "build": "vite build",
     "preview": "vite preview",
     "check": "svelte-kit sync && svelte-check --tsconfig ./tsconfig.json",
-    "check:watch": "svelte-kit sync && svelte-check --tsconfig ./tsconfig.json --watch"
+    "check:watch": "svelte-kit sync && svelte-check --tsconfig ./tsconfig.json --watch",
+    "storybook": "storybook dev -p 6006",
+    "build-storybook": "storybook build"
   },
   "devDependencies": {
     "@sveltejs/adapter-cloudflare": "^4.7.4",
@@ -19,7 +21,11 @@
     "svelte-check": "^4.0.8",
     "tailwindcss": "^3.4.17",
     "typescript": "^5.7.2",
-    "vite": "^6.0.5"
+    "vite": "^6.0.5",
+    "storybook": "^9.0.16",
+    "@storybook/sveltekit": "^9.0.16",
+    "@storybook/addon-svelte-csf": "^5.0.7",
+    "@storybook/addon-docs": "^9.0.16"
   },
   "type": "module"
 }
