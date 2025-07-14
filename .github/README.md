@@ -16,14 +16,6 @@ This directory contains GitHub Actions workflows for CI/CD.
 - Runs on push to main
 - Available at: `https://[username].github.io/home`
 
-### Deploy to Cloudflare Workers (`deploy-cloudflare.yml`)
-- Deploys the main app to Cloudflare Workers
-- Runs on push to main and pull requests
-- Uses wrangler-action for deployment
-- Requires secrets:
-  - `CLOUDFLARE_API_TOKEN`
-  - `CLOUDFLARE_ACCOUNT_ID`
-
 ### Release (`release.yml`)
 - Creates GitHub releases when tags are pushed
 - Generates changelog automatically
@@ -48,27 +40,20 @@ This directory contains GitHub Actions workflows for CI/CD.
 ### `FUNDING.yml`
 - GitHub Sponsors configuration
 
-## Required Secrets
-
-For Cloudflare deployment:
-1. Go to Settings > Secrets and variables > Actions
-2. Add:
-   - `CLOUDFLARE_API_TOKEN`: Your Cloudflare API token
-   - `CLOUDFLARE_ACCOUNT_ID`: Your Cloudflare account ID
-
 ## Cloudflare Workers Configuration
 
-### Setup Steps
-1. The project uses Cloudflare Workers (not Pages)
-2. Configuration is in `wrangler.toml`
-3. GitHub Actions handles deployment automatically
-4. No manual configuration needed in Cloudflare dashboard
+Cloudflare automatically builds and deploys from the GitHub repository when changes are pushed to main.
+
+### Setup in Cloudflare Dashboard
+1. Connect your GitHub repository to Cloudflare
+2. Cloudflare will use `wrangler.toml` for configuration
+3. Automatic deployments trigger on push to main
 
 ### Local Development
 ```bash
 npm run build
 npx wrangler dev  # Test locally
-npm run deploy    # Deploy to production
+npm run deploy    # Deploy manually if needed
 ```
 
 ## Enabling GitHub Pages
