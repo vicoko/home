@@ -45,5 +45,9 @@ coverage/
 tmp/
 temp/
 
+# Storybook
 *storybook.log
 storybook-static
+
+# Wrangler
+.wrangler/

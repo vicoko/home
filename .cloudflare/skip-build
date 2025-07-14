@@ -1,0 +1,2 @@
+# This file tells Cloudflare Pages to skip the build process
+# The GitHub Action workflow handles building and deploying
