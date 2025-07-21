@@ -20,7 +20,7 @@
     "@cloudflare/workers-types": "^4.20250712.0",
     "@storybook/addon-docs": "^9.0.16",
     "@storybook/addon-svelte-csf": "^5.0.7",
-    "@storybook/sveltekit": "^9.0.16",
+    "@storybook/sveltekit": "^9.0.17",
     "@sveltejs/adapter-cloudflare": "^4.7.4",
     "@sveltejs/kit": "^2.8.5",
     "@sveltejs/vite-plugin-svelte": "^5.0.0",
