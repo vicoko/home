@@ -23,7 +23,7 @@
     "@storybook/sveltekit": "^9.0.16",
     "@sveltejs/adapter-cloudflare": "^4.7.4",
     "@sveltejs/kit": "^2.8.5",
-    "@sveltejs/vite-plugin-svelte": "^5.0.0",
+    "@sveltejs/vite-plugin-svelte": "^6.1.0",
     "autoprefixer": "^10.4.20",
     "postcss": "^8.4.49",
     "storybook": "^9.0.16",
