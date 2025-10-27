@@ -36,7 +36,7 @@ jobs:
       run: npm run build-storybook
     
     - name: Upload build artifacts
-      uses: actions/upload-artifact@v4
+      uses: actions/upload-artifact@v5
       if: matrix.node-version == '20.x'
       with:
         name: build-artifacts
@@ -44,7 +44,7 @@ jobs:
         retention-days: 7
     
     - name: Upload Storybook artifacts
-      uses: actions/upload-artifact@v4
+      uses: actions/upload-artifact@v5
       if: matrix.node-version == '20.x'
       with:
         name: storybook-artifacts
